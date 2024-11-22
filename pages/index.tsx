@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { onEntryChange } from '../contentstack-sdk';
-import RenderComponents from '../components/render-components';
+import RenderComponents from '../sample-components/render-components';
 import { getPageRes } from '../helper';
 import Skeleton from 'react-loading-skeleton';
 import { Props, Context } from "../typescript/pages";
+
+// HOME PAGE  - UPDATE APPROPRIATELY FOR TYPE...EXPECT MINIMAL CHANGES REQUIRED FROM BASE FORMAT
+
 
 export default function Home(props: Props) {
 
@@ -28,7 +31,7 @@ export default function Home(props: Props) {
   return getEntry ? (
     <RenderComponents
       pageComponents={getEntry.page_components}
-      contentTypeUid='page'
+      contentTypeUid='home'
       entryUid={getEntry.uid}
       locale={getEntry.locale}
     />

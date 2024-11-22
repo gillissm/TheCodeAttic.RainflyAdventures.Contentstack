@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { onEntryChange } from '../../contentstack-sdk';
-import BlogList from '../../components/blog-list';
-import RenderComponents from '../../components/render-components';
+import BlogList from '../../sample-components/blog-list';
+import RenderComponents from '../../sample-components/render-components';
 import { getPageRes, getBlogListRes } from '../../helper';
 
-import ArchiveRelative from '../../components/archive-relative';
+import ArchiveRelative from '../../sample-components/archive-relative';
 import Skeleton from 'react-loading-skeleton';
 import { Page, PostPage, PageUrl, Context } from "../../typescript/pages";
 
+// LANDING PAGE FOR 'BLOGS'
+
+// TODO: NUMBER OF CHANGES TO SUPPORT MY CONTENT NEEDS
 
 export default function Blog({ page, posts, archivePost, pageUrl }: {page: Page, posts: PostPage, archivePost: PostPage, pageUrl: PageUrl}) {
 

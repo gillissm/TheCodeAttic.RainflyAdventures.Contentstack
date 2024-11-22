@@ -4,10 +4,13 @@ import parse from 'html-react-parser';
 import { getPageRes, getBlogPostRes } from '../../helper';
 import { onEntryChange } from '../../contentstack-sdk';
 import Skeleton from 'react-loading-skeleton';
-import RenderComponents from '../../components/render-components';
-import ArchiveRelative from '../../components/archive-relative';
+import RenderComponents from '../../sample-components/render-components';
+import ArchiveRelative from '../../sample-components/archive-relative';
 import { Page, BlogPosts, PageUrl } from "../../typescript/pages";
 
+// EXAMPLE OF SECONDARY PAGE UNDER 'BLOG'
+
+// TODO: NUMBER OF CHANGES TO REFLECT MY TYPES
 
 export default function BlogPost({ blogPost, page, pageUrl }: {blogPost: BlogPosts, page: Page, pageUrl: PageUrl}) {
   

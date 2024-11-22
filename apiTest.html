@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style></style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/contentstack@latest/dist/web/contentstack.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <img src="img_la.jpg" alt="LA" style="width: 100%" />
+
+    <div class="">
+      <h1>This is a Heading</h1>
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      <button onclick="getentry()">Get Entry</button>
+      <button onclick="getModuleList()">Get Module References</button>
+    </div>
+    <div id="theResult"></div>
+  </body>
+
+  <script>
+    const Stack = null;
+
+    window.onload = function () {
+      this.Stack = Contentstack.Stack(
+        "blt007136d3bb9fec54",
+        "cs7797517dcc352ed7a70af6e5",
+        "dev"
+      );
+    };
+
+    function getentry() {
+      const Query = this.Stack.ContentType("header").Entry("blt3a76b909a7ac4257")
+        .includeReference(['top_level_navigation.navigation_items.internal_link.link_target.url']);
+      Query.toJSON()
+        .fetch()
+        .then(
+          function success(entry) {
+            console.log(entry["title"]); // Retrieve field value by providing a field's UID
+            console.log(entry); // Convert the entry result object to JSON
+          },
+          function error(err) {
+            // err object
+            console.log(err);
+          }
+        );
+    }
+
+    function getModuleList(){
+      const Query = this.Stack.ContentType("superhero_landing_page").Query().includeReference(["modular_blocks.super_heroes_gallery.heroes"]);
+      Query.toJSON().where('url', '/gallery').find().then(
+        (result)=>{
+          console.log(result[0]);
+          document.getElementById("theResult").setHTMLUnsafe(result[0]);
+        },
+        (error)=>{
+          console.error(error);
+        }
+      );
+  }
+  </script>
+</html>

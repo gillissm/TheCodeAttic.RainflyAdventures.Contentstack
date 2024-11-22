@@ -9,6 +9,7 @@ export const getServerSideProps = async ({ res }: {res: Context}) => {
 
   const baseUrl = process.env.NEXT_PUBLIC_HOSTED_URL || 'http://localhost:3000';
 
+  // TODO: WILL NEED TO UPDATE APPROPRIATELY FOR ALL POST GETTERS
   let pages = await getAllEntries();
   let posts = await getBlogListRes();
 

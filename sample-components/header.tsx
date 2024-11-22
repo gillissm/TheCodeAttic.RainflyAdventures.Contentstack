@@ -15,23 +15,23 @@ export default function Header({ header, entries }: {header: HeaderProps, entrie
 
   function buildNavigation(ent: Entry, hd: HeaderProps) {
     let newHeader={...hd};
-    if (ent.length!== newHeader.navigation_menu.length) {
-          ent.forEach((entry) => {
-            const hFound = newHeader?.navigation_menu.find(
-              (navLink: NavLinks) => navLink.label === entry.title
-            );
-            if (!hFound) {
-              newHeader.navigation_menu?.push({
-                label: entry.title,
-                page_reference: [
-                  { title: entry.title, url: entry.url, $: entry.$ },
-                ],
-                $:{}
-              });
-            }
-          });
-    }
-    return newHeader
+    // if (ent.length!== newHeader.top_level_navigation.length) {
+    //       ent.forEach((entry) => {
+    //         const hFound = newHeader?.top_level_navigation.find(
+    //           (navLink: NavLinks) => navLink.label === entry.title
+    //         );
+    //         if (!hFound) {
+    //           newHeader.navigation_menu?.push({
+    //             label: entry.title,
+    //             page_reference: [
+    //               { title: entry.title, url: entry.url, $: entry.$ },
+    //             ],
+    //             $:{}
+    //           });
+    //         }
+    //       });
+    // }
+    return hd; //newHeader
   }
 
   async function fetchData() {
@@ -56,7 +56,7 @@ export default function Header({ header, entries }: {header: HeaderProps, entrie
   return (
     <header className='header'>
       <div className='note-div'>
-        {headerData?.notification_bar.show_announcement ? (
+        {/* {headerData?.notification_bar.show_announcement ? (
           typeof headerData.notification_bar.announcement_text === 'string' && (
             <div {...headerData.notification_bar.$?.announcement_text as {}}>
               {parse(headerData.notification_bar.announcement_text)}
@@ -64,7 +64,7 @@ export default function Header({ header, entries }: {header: HeaderProps, entrie
           )
         ) : (
           <Skeleton />
-        )}
+        )} */}
       </div>
       <div className='max-width header-div'>
         <div className='wrapper-logo'>
@@ -91,12 +91,12 @@ export default function Header({ header, entries }: {header: HeaderProps, entrie
         <nav className='menu'>
           <ul className='nav-ul header-ul'>
             {headerData ? (
-              headerData.navigation_menu.map((list) => {
+              headerData.top_level_navigation.map((list) => {
                 const className =
                   router.asPath === list.page_reference[0].url ? 'active' : '';
                 return (
                   <li
-                    key={list.label}
+                    key={list.title}
                     className='nav-li'
                     {...list.page_reference[0].$?.url as {}}
                   >

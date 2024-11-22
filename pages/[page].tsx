@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { onEntryChange } from '../contentstack-sdk';
-import RenderComponents from '../components/render-components';
+import RenderComponents from '../sample-components/render-components';
 import { getPageRes } from '../helper';
 import Skeleton from 'react-loading-skeleton';
 import { Props } from "../typescript/pages";
+
+// CATCH FOR MOST TOP LEVEL PAGES
+
+// TODO: UPDATE AS APPROPRIATE FOR CONTENT TYPES
 
 export default function Page(props: Props) {
   const { page, entryUrl } = props;

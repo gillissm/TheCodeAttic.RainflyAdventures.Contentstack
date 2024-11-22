@@ -7,6 +7,10 @@ import {
   isValidCustomHostUrl,
 } from "./utils";
 
+// ENTRY POINT TO CONTENTSTACK API SDK CALLS
+
+// TODO - NO CHANGES SHOULD BE REQUIRED
+
 type GetEntry = {
   contentTypeUid: string;
   referenceFieldPath: string[] | undefined;

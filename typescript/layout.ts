@@ -1,130 +1,140 @@
 import { Image } from "./action";
 import { Component } from "../typescript/component";
 
-type AdditionalParam = {
-  title: {};
-  copyright: string;
-  announcement_text: string;
-  label: {};
-  url: string;
-}
+// ADD TYPES AS THEY APPLY TO STRUCTURAL components
 
-type EntryData = {
-  title: string;
-  url: string;
-  $: AdditionalParam;
-}
+// type AdditionalParam = {
+//   title: {};
+//   copyright: string;
+//   announcement_text: string;
+//   label: {};
+//   url: string;
+// }
 
-type Announcement = {
-  show_announcement: boolean;
-  announcement_text: string;
-  $: AdditionalParam;
-}
+// type EntryData = {
+//   title: string;
+//   url: string;
+//   $: AdditionalParam;
+// }
 
-type PageRef = {
-  title: string;
-  url: string;
-  $: AdditionalParam;
-}
+// // type Announcement = {
+// //   show_announcement: boolean;
+// //   announcement_text: string;
+// //   $: AdditionalParam;
+// // }
 
-type Share = {
-  link: Links;
-  icon: Image;
-}
+// type PageRef = {
+//   title: string;
+//   url: string;
+//   $: AdditionalParam;
+// }
 
-type Social = {
-  social_share: [Share];
-}
+// type Share = {
+//   link: Links;
+//   icon: Image;
+// }
 
-type Navigation = {
-  link: [Links];
-}
+// type Social = {
+//   social_share: [Share];
+// }
 
-type Author = {
-  title: string;
-  $: AdditionalParam;
-}
+// type Navigation = {
+//   link: [Links];
+// }
 
-type Blog = {
-  url: string;
-  body: string;
-  title: string;
-  $: AdditionalParam;
-}
+// type Author = {
+//   title: string;
+//   $: AdditionalParam;
+// }
 
-export type Posts = {
-  locale: string;
-  author: [Author];
-  body: string;
-  date: string;
-  featured_image: {};
-  is_archived: boolean;
-  related_post: [Blog];
-  seo: {};
-  url:string;
-  title: string;
-  _owner: {}
-}
+// type Blog = {
+//   url: string;
+//   body: string;
+//   title: string;
+//   $: AdditionalParam;
+// }
+
+// export type Posts = {
+//   locale: string;
+//   author: [Author];
+//   body: string;
+//   date: string;
+//   featured_image: {};
+//   is_archived: boolean;
+//   related_post: [Blog];
+//   seo: {};
+//   url:string;
+//   title: string;
+//   _owner: {}
+// }
 
 
-export type HeaderProps = {
-  locale:string;
-  logo: Image;
-  navigation_menu:[List]
-  notification_bar: Announcement;
-  title: string;
-  uid: string;
-  social: Social;
-  navigation: Navigation;
-  copyright: string;
-  $: AdditionalParam;
-}
+// export type HeaderProps = {
+//   locale:string;
+//   logo: Image;
+//   top_level_navigation:[Menu]
+//   // notification_bar: Announcement;
+//   title: string;
+//   uid: string;
+//   $: AdditionalParam;
+// }
 
-export type Entry = [
-  entry: EntryData
-]
+// export type Menu = {
+//   title: string;
+//   menu:[MenuItem]
+// }
 
-type List = {
-  label?: string;
-  page_reference: [PageRef];
-  $: {};
-  href?: string;
-}
+// export type MenuItem = {
+//   menu_title: string;
+//   menu_item:[Links]
+// }
 
-export type NavLinks = {
-  label?: string;
-}
 
-export type Links = {
-  label?: string;
-  title: string;
-  href: string;
-  $:AdditionalParam;
-}
+// export type Entry = [
+//   entry: EntryData
+// ]
 
-export type PageProps = {
-  locale: string;
-  page_components: Component[];
-  uid: string;
-  url: string;
-  title: string;
-  seo: {};
-}
+// type List = {
+//   label?: string;
+//   page_reference: [PageRef];
+//   $: {};
+//   href?: string;
+// }
 
-export type FooterProps = {
-  logo: Image;
-  title: string;
-  social: Social;
-  navigation: Navigation;
-  copyright: string;
-  locale: string, 
-  navigation_menu: [List];
-  notification_bar: Announcement; 
-  uid: string;
-  $: AdditionalParam;
-}
+// export type NavLinks = {
+//   label?: string;
+// }
 
-export type ChilderenProps = {
-  props: {};
-  type: Function;
-}
+// export type Links = {
+//   label?: string;
+//   title: string;
+//   href: string;
+//   $:AdditionalParam;
+// }
+
+// export type PageProps = {
+//   locale: string;
+//   page_components: Component[];
+//   uid: string;
+//   url: string;
+//   title: string;
+//   seo: {};
+// }
+
+// export type FooterProps = {
+//   logo: Image;
+//   title: string;
+//   social: Social;
+//   navigation: Navigation;
+//   copyright: string;
+//   locale: string, 
+//   navigation_menu: [List];
+//   //notification_bar: Announcement; 
+//   uid: string;
+//   $: AdditionalParam;
+// }
+
+// export type ChilderenProps = {
+//   props: {};
+//   type: Function;
+// }

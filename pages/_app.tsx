@@ -2,7 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import Layout from '../components/layout';
+import Layout from '../sample-components/layout';
 import { getHeaderRes, getFooterRes, getAllEntries } from '../helper';
 import 'nprogress/nprogress.css';
 import '../styles/third-party.css';
@@ -10,6 +10,8 @@ import '../styles/style.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import '@contentstack/live-preview-utils/dist/main.css';
 import { Props } from "../typescript/pages";
+
+// TODO: POSSIBLE CHANGES REQUIRED TO GET_INITIAL_PROPS
 
 
 Router.events.on('routeChangeStart', () => NProgress.start());
